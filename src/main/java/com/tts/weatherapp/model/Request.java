@@ -1,25 +1,29 @@
 package com.tts.weatherapp.model;
 
-import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Data
+@Entity
 public class Request {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
     private String zipCode;
 
+
     public String getZipCode() {
-		return zipCode;
-	}
+        return zipCode;
+    }
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 
-	public Request(String zipCode) {
-		super();
-		this.zipCode = zipCode;
-	} 	
-	
-	public Request() {
-		
-	}
+    public Request(){
+
+    }
+
 }

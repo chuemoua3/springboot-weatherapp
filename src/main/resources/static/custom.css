@@ -1,0 +1,10 @@
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-primary {
+    color: white;
+    background-color: darkcyan;
+    border-color: darkcyan;
+}

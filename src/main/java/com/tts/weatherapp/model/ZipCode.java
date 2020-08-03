@@ -1,35 +1,49 @@
 package com.tts.weatherapp.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-@Data
-@NoArgsConstructor
 @Entity
 public class ZipCode {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(unique=true)
+    private String zip;
 
-    @Column(unique = true)
-    private String zipCode;
 
-    @CreationTimestamp
-    private Date submittedAt;
-
-    public ZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public Long getId() {
+        return id;
     }
 
-   
+    @Override
+    public String toString() {
+        return "ZipCode{" +
+                "id=" + id +
+                ", zip='" + zip + '\'' +
+                '}';
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public ZipCode() {
+    }
+
+    public ZipCode(String zip) {
+        this.zip = zip;
+    }
 }
